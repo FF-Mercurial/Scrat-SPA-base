@@ -1,0 +1,13 @@
+{{#with post}}
+  <div class="post-preview">
+    <div class="post-preview__preview">
+      <img class="post-preview__preview-img" src="{{preview.img}}">
+      {{#if preview.text}}
+        <div class="post-preview__preview-text">
+          {{preview.text}}
+        </div>
+      {{/if}}
+    </div>
+    <div class="include__post-bottom"></div>
+  </div>
+{{/with}}

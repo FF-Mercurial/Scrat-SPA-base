@@ -1,0 +1,24 @@
+{{#with comment}}
+  <div class="comment">
+    <div class="comment__top">
+      <div class="comment__content-container">
+        <div class="comment__content">
+          {{{content}}}
+        </div>
+        {{#if parentContent}}
+          <div class="comment__parent">
+            {{parentContent}}
+          </div>
+        {{/if}}
+      </div>
+    </div>
+    <div class="comment__bottom">
+      <div class="comment__comment">
+        <div class="comment__comment-icon"></div>
+      </div>
+      <div class="comment__like">
+        <div class="comment__like-icon"></div><span class="comment__num">{{like}}</span>
+      </div>
+    </div>
+  </div>
+{{/with}}

@@ -1,0 +1,68 @@
+@import '../../common/var';
+
+.post-bottom {
+    padding: 10px;
+    border-top: solid 1px @line-gray;
+    color: #333;
+    font-size: 0;
+    
+    >div {
+        display: inline-block;
+        box-sizing: border-box;
+        width: 33.3%;
+        text-align: center;
+        font-size: @font-size;
+
+        >div {
+            display: inline-block;
+        }
+
+        >span {
+            display: inline-block;
+            width: 16px;
+            text-align: center;
+        }
+    }
+
+    &__like-icon,
+    &__dislike-icon {
+        position: relative;
+        right: 5px;
+        width: 16px;
+        height: 16px;
+        background-image: url(common/like-black.png?__sprite);  // add '?__sprite' for spriting
+        background-size: 16px 16px;
+        background-repeat: no-repeat;
+    }
+
+    &__like-icon {
+        top: 1px;
+    }
+
+    &__dislike-icon {
+        top: 4px;
+        transform: rotate(180deg);
+    }
+
+    &__comment-icon {
+        position: relative;
+        top: 4px;
+        width: 16px;
+        right: 5px;
+        height: 16px;
+        background-image: url(common/comment.png?__sprite);
+        background-size: 16px 16px;
+        background-repeat: no-repeat;
+    }
+
+    .common-checked {
+        color: @uc-yellow;
+
+        .post-bottom__like-icon,
+        .post-bottom__dislike-icon {
+            background-image: url(common/like-uc-yellow.png?__sprite);
+            background-size: 16px 16px;
+            background-repeat: no-repeat;
+        }
+    }
+}

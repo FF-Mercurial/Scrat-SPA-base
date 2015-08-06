@@ -1,0 +1,39 @@
+@import '../../common/var';
+@import '../../common/ui';
+
+.post-preview {
+    .common-card;
+
+    +.post-preview {
+        margin-top: 20px;
+    }
+
+    &__preview {
+        position: relative;
+        height: 200px;
+        // max-height: 200px;
+        overflow: hidden;
+        font-size: 0;
+
+        &-text {
+            position: absolute;
+            bottom: 0;
+            box-sizing: border-box;
+            width: 100%;
+            padding: 0 10px;
+            height: 30px;
+            line-height: 30px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            text-align: right;
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            font-size: @font-size;
+        }
+
+        &-img {
+            width: 100%;
+        }
+    }
+}

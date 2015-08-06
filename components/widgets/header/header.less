@@ -1,0 +1,40 @@
+@import '../../common/var';
+
+.header {
+    height: 60px;
+    background: @uc-yellow;
+
+    >div {
+        position: absolute;
+    }
+
+    &__header {
+        top: 10px;
+        left: @padding-x;
+        color: white;
+        font-size: 24px;
+    }
+
+    &__nav-bar {
+        top: 20px;
+        right: @padding-x;
+    }
+
+    &__nav {
+        display: inline-block;
+        width: 60px;
+        height: 20px;
+        line-height: 20px;
+        margin-left: 5px;
+        text-align: center;
+        text-decoration: none;
+        color: white;
+        border: solid 1px white;
+
+        &.common-checked {
+            color: @uc-yellow;
+            border-color: @uc-yellow;
+            background: white;
+        }
+    }
+}

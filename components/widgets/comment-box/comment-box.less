@@ -1,0 +1,103 @@
+@import '../../common/var';
+@import '../../common/ui';
+
+.comment-box {
+    .common-card;
+
+    padding: 10px 0 100px 0;
+
+    &__hot-comment-header,
+    &__comment-header {
+        display: inline-block;
+        padding: 5px @padding-x;
+        margin-left: @padding-x;
+        border-radius: 3px;
+        color: white;
+    }
+    
+    &__hot-comment-header {
+        background: @uc-yellow;
+    }
+    
+    &__comment-header {
+        background: #777;
+    }
+    
+    &__hot-comment-list,
+    &__comment-list {
+        margin-top: 10px;
+        border-top: solid 1px @line-gray;
+    }
+
+    &__hot-comment-container,
+    &__comment-container {
+        margin-bottom: 10px;
+    }
+
+    &__comment-form-container {
+        position: fixed;
+        opacity: 0;
+        bottom: 0;
+        left: 0;
+        box-sizing: border-box;
+        width: 100%;
+        padding: 10px @padding-x;
+        border-top: solid 1px @line-gray;
+        background: white;
+    }
+    
+    &__comment-form {
+        @button-height: 30px;
+        @button-width: 30px;
+        @text-margin: @button-width - 1;
+        @border-radius: 2px;
+    
+        position: relative;
+        box-sizing: border-box;
+        font-size: 0;
+    
+        * {
+            box-sizing: border-box;
+        }
+    
+        .comment-box__comment-input-container {
+            margin-right: @text-margin;
+        }
+    
+        input[type='text'] {
+            width: 100%;
+            height: @button-height;
+            line-height: @button-height;
+            padding: 2px;
+            border: solid 1px @line-gray;
+            border-radius: @border-radius;
+            border-top-left-radius: @border-radius;
+            border-bottom-left-radius: @border-radius;
+            resize: none;
+            font-size: @font-size;
+        }
+        
+        button {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: @button-width;
+            height: @button-height;
+            line-height: @button-height;
+            border: none;
+            border-top-right-radius: @border-radius;
+            border-bottom-right-radius: @border-radius;
+            background: @uc-yellow;
+            color: white;
+            text-align: center;
+            font-size: 20px;
+        }
+    }
+    
+    &__comment-more {
+        background: @line-gray;
+        text-align: center;
+        padding: @padding-x;
+    }
+}
+
