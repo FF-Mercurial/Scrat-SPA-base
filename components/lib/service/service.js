@@ -6,63 +6,81 @@
 
 // cb(post)
 function getPost(postId, cb) {
-  var url = '/s/get-post/' + postId;
-  $.get(url, cb);
+  get('post', {
+    postId: postId
+  }, cb);
 }
 
 // cb(posts)
 function getMorePosts(maxId, cb) {
-  var url = '/s/get-more-posts/maxId/' + maxId;
-  $.get(url, cb);
+  get('more-posts', {
+    maxId: maxId
+  }, cb);
 }
 
 // cb(posts)
 function getHotPosts(cb) {
-  var url = '/s/get-hot-posts';
-  $.get(url, cb);
+  get('hot-posts', cb);
 }
 
 // cb(comments, more)
 function getMoreComments(postId, maxIndex, cb) {
-  var url = '/s/get-more-comments/post/' + postId + '/maxIndex/' + maxIndex;
-  $.get(url, function (res) {
+  get('more-comments', {
+    postId: postId,
+    maxIndex: maxIndex
+  }, function (res) {
     cb(res.comments, res.more);
   });
 }
 
 // cb(comments)
 function getHotComments(postId, cb) {
-  var url = '/s/get-hot-comments/post/' + postId;
-  $.get(url, cb);
+  get('hot-comments', {
+    postId: postId
+  }, cb);
 }
 
 // cb(null)
 function incPostLike(postId, inc, cb) {
-  var url = '/s/' + (inc ? 'inc' : 'dec') + '-like/post/' + postId;
-  $.get(url, cb);
+  get((inc ? 'inc' : 'dec') + '-post-like', {
+    postId: postId
+  }, cb);
 }
 
 // cb(null)
 function incPostDislike(postId, inc, cb) {
-  var url = '/s/' + (inc ? 'inc' : 'dec') + '-dislike/post/' + postId;
-  $.get(url, cb);
+  get((inc ? 'inc' : 'dec') + '-post-dislike', {
+    postId: postId
+  }, cb);
 }
 
 // cb(null)
 function incCommentLike(postId, commentIndex, inc, cb) {
-  var url = '/s/' + (inc ? 'inc' : 'dec') + '-like/post/' + postId + '/comment/' + commentIndex;
-  $.get(url, cb);
+  get((inc ? 'inc' : 'dec') + '-comment-like', {
+    postId: postId,
+    commentIndex: commentIndex
+  }, cb);
 }
 
 // cb(commentIndex)
 function postComment(postId, parentIndex, content, cb) {
-  var url = '/s/post-comment',
-      body = {
-        postId: postId,
-        parentIndex: parentIndex,
-        content: content
-      };
-  $.post(url, body, cb);
+  post('comment', {
+    postId: postId,
+    parentIndex: parentIndex,
+    content: content
+  }, cb);
+}
+
+function get() {
+  var args = arguments;
+  args[0] = '/s/' + args[0];
+  $.get.apply($, args);
+}
+
+function post() {
+  var args = arguments;
+  args[0] = '/s/' + args[0];
+  $.post.apply($, args);
 }
 
 module.exports = {

@@ -1,0 +1,37 @@
+.icon-comment-comment {
+    background-image: url(icons/comment.png);
+    top: 2px;
+}
+
+.icon-comment-like {
+    background-image: url(icons/like-black.png);
+}
+
+.icon-comment-like.common-checked {
+    background-image: url(icons/like-uc-yellow.png);
+}
+
+.icon-post-bottom-comment {
+    background-image: url(icons/comment.png?__sprite);
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+}
+
+.icon-post-bottom-like {
+    background-image: url(icons/like-black.png?__sprite);
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+}
+
+.icon-post-bottom-like.common-checked {
+    background-image: url(icons/like-uc-yellow.png?__sprite);
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+}
+
+.icon-goto-top {
+    background-image: url(icons/up.png?__sprite);
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+    background-position: 8px 8px;
+}

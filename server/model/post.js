@@ -4,15 +4,15 @@
  * model layer, using simple db based on json file
  */
 
+var HOT_COMMENTS_SIZE = 3,
+    COMMENTS_SIZE = 5,
+    POSTS_SIZE = 10;
+
 var DB_PATH = require('path').join(__dirname, 'db.json'),
     fs = require('fs'),
     db = JSON.parse(fs.readFileSync(DB_PATH)),
     posts = db.posts,
     hotPosts = posts.filter(isHotPost);
-
-var HOT_COMMENTS_SIZE = 3,
-    COMMENTS_SIZE = 5,
-    POSTS_SIZE = 10;
 
 /**
  * model interfaces

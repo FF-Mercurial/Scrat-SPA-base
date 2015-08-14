@@ -3,8 +3,8 @@
 var cluster = require('cluster'),
     os = require('os'),
     cpuCount = os.cpus().length,
-    app = require('./index'),
-    logger = app.get('logger') || console;
+    app = require('../app'),
+    logger = app.get('logger');
 
 if (cluster.isMaster) {
     for (var i = 0; i < cpuCount; i++) cluster.fork();

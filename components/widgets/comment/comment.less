@@ -1,4 +1,5 @@
-@import '../../common/var';
+@import (reference) '../../styles/var';
+/* @require 'styles/icon' */
 
 .comment {
     padding: 5px 10px;
@@ -45,16 +46,7 @@
         }
     }
 
-    &__comment-icon {
-        background-image: url(common/comment.png);
-        top: 2px;
-    }
-
     &__like {
-        &-icon {
-            background-image: url(common/like-black.png);
-        }
-        
         >span {
             display: inline-block;
             width: 16px;
@@ -64,9 +56,5 @@
 
     .common-checked {
         color: @uc-yellow;
-
-        .comment__like-icon {
-            background-image: url(common/like-uc-yellow.png);
-        }
     }
 }

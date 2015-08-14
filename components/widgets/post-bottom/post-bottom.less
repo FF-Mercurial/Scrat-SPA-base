@@ -1,4 +1,5 @@
-@import '../../common/var';
+@import (reference) '../../styles/var';
+/* @require 'styles/icon' */
 
 .post-bottom {
     padding: 10px;
@@ -30,9 +31,6 @@
         right: 5px;
         width: 16px;
         height: 16px;
-        background-image: url(common/like-black.png?__sprite);  // add '?__sprite' for spriting
-        background-size: 16px 16px;
-        background-repeat: no-repeat;
     }
 
     &__like-icon {
@@ -50,19 +48,9 @@
         width: 16px;
         right: 5px;
         height: 16px;
-        background-image: url(common/comment.png?__sprite);
-        background-size: 16px 16px;
-        background-repeat: no-repeat;
     }
 
     .common-checked {
         color: @uc-yellow;
-
-        .post-bottom__like-icon,
-        .post-bottom__dislike-icon {
-            background-image: url(common/like-uc-yellow.png?__sprite);
-            background-size: 16px 16px;
-            background-repeat: no-repeat;
-        }
     }
 }

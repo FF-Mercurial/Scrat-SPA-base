@@ -1,7 +1,7 @@
 'use strict';
 
 var express = require('express'),
-    app = require('./index');
+    app = require('../app');
 
 module.exports = function (dir) {
     dir = dir || '/public';
