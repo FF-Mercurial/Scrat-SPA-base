@@ -1,10 +1,12 @@
 .icon-comment-comment {
     background-image: url(icons/comment.png?__sprite);
     top: 2px;
+    opacity: 0.8;
 }
 
 .icon-comment-like {
     background-image: url(icons/like-black.png?__sprite);
+    opacity: 0.8;
 }
 
 .icon-comment-like.common-checked {
@@ -15,12 +17,14 @@
     background-image: url(icons/comment.png?__sprite);
     background-size: 16px 16px;
     background-repeat: no-repeat;
+    opacity: 0.8;
 }
 
 .icon-post-bottom-like {
     background-image: url(icons/like-black.png?__sprite);
     background-size: 16px 16px;
     background-repeat: no-repeat;
+    opacity: 0.8;
 }
 
 .icon-post-bottom-like.common-checked {
